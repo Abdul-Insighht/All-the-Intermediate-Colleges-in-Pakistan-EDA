@@ -1,130 +1,87 @@
+﻿<div align="center">
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=All%20the%20Intermediate%20Colleges%20in%20Pakistan%20EDA&fontSize=32&fontColor=ffffff&animation=twinkling&fontAlignY=35"/>
+</div>
+
 # All-the-Intermediate-Colleges-in-Pakistan-EDA
-# Exploratory Data Analysis Project
 
-# Cell 1
-#Exploratory Data Analysis Project # 1
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# Cell 2
-# Load the dataset
-df = pd.read_csv('All the Intermediate Colleges in Pakistan.csv')
-
-# Cell 3
-# Overview of the dataset
-print("Dataset Overview:\n", df.info())
-
-# Cell 4
-df.columns
-
-# Cell 5
-df.dtypes
-
-# Cell 6
-df.shape
-
-# Cell 7
-# Checking for missing values
-missing_values = df.isnull().sum()
-print("\nMissing Values:\n", missing_values)
-
-# Cell 8
-# Basic statistics
-print("\nBasic Statistics:\n", df.describe(include='all'))  # Use include='all' to get stats for all columns
-
-# Cell 9
-# Unique study programs
-print("\nUnique Study Programs:\n", df['Study Program'].unique())
-
-# Cell 10
-# Handling missing values in 'Sector' for analysis
-df['Sector'].fillna('Unknown', inplace=True)  # Replace missing values in 'Sector' with 'Unknown'
-
-
-# Cell 11
-# Analyzing the distribution of Sector (Private vs Public)
-plt.figure(figsize=(8, 6))
-sns.countplot(data=df, x='Sector')
-plt.title('Distribution of Colleges by Sector (Private vs Public)')
-plt.xticks(rotation=45)  # Rotate x-axis labels if necessary
-plt.show()
-
-# Cell 12
-# Analyzing the distribution of Sector (Private vs Public and Unknown)
-plt.figure(figsize=(8, 6))
-ax = sns.countplot(data=df, x='Sector')
-plt.title('Distribution of Colleges by Sector (Private vs Public and Unknown)')
-plt.xticks(rotation=45)  # Rotate x-axis labels if necessary
-
-# Adding the counts on top of the bars
-for p in ax.patches:
-    ax.annotate(f'{int(p.get_height())}', (p.get_x() + p.get_width() / 2., p.get_height()), 
-                ha='center', va='baseline', fontsize=11, color='black', xytext=(0, 5), 
-                textcoords='offset points')
-
-plt.show()
-
-
-# Cell 13
-# Handling missing or improper values in 'Rating' column
-# First, convert the 'Rating' column to a string type, extract numbers, and convert them back to float
-df['Rating'] = df['Rating'].astype(str).str.extract('(\d+\.?\d*)').astype(float)
-
-# Cell 14
-# Analyzing the rating distribution
-plt.figure(figsize=(8, 6))
-sns.histplot(df['Rating'].dropna(), bins=5, kde=True)
-plt.title('Distribution of College Ratings')
-plt.xlabel('Rating')
-plt.ylabel('Count')
-plt.show()
-
-# Cell 15
-# Correlation between sectors and ratings (drop rows with missing 'Rating')
-plt.figure(figsize=(8, 6))
-sns.boxplot(data=df.dropna(subset=['Rating']), x='Sector', y='Rating')
-plt.title('Rating Distribution by Sector')
-plt.xticks(rotation=45)
-plt.show()
-
-# Cell 16
-# Top locations with the most colleges
-top_locations = df['Location'].value_counts().head(10)
-plt.figure(figsize=(10, 6))
-sns.barplot(x=top_locations.values, y=top_locations.index)
-plt.title('Top 10 Locations with Most Colleges')
-plt.xlabel('Number of Colleges')
-plt.ylabel('Location')
-plt.show()
-
-# Cell 17
-
-# Displaying the first few rows to understand the structure of the data
-print(df.head())
-
+Exploratory data analysis of all intermediate colleges in Pakistan with comprehensive statistical insights and visualizations.
 
 ---
 
-## 📬 Contact
+## Project Status: âœ… COMPLETE & READY FOR DEPLOYMENT
 
-**Hafiz Abdul Rehman**
-
-- 📧 Email: hafizrehman3321@gmail.com
-- 💼 LinkedIn: [Hafiz Abdul Rehman](https://linkedin.com/in/hafiz-abdul-rehman-9990ab329)
-- 🐙 GitHub: [Abdul-Insighht](https://github.com/Abdul-Insighht)
+![GitHub stars](https://img.shields.io/github/stars/Abdul-Insighht/=social)
+![GitHub forks](https://img.shields.io/github/forks/Abdul-Insighht/=social)
 
 ---
 
-## 🌟 Show Your Support
+## ðŸ› ï¸ Tech Stack
 
-If you find this project helpful, please consider:
-
-- ⭐ **Starring** this repository
-- 🔄 **Sharing** with others
-- 🐛 **Reporting** issues
-- 💡 **Suggesting** improvements
+```
+Python, Pandas, Matplotlib, Seaborn, Plotly
+```
 
 ---
 
-<p align="center">Made with ❤️ by <b>Hafiz Abdul Rehman</b></p>
+## ðŸš€ Getting Started
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/Abdul-Insighht/All-the-Intermediate-Colleges-in-Pakistan-EDA.git
+cd All-the-Intermediate-Colleges-in-Pakistan-EDA
+```
+
+2. **Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+3. **Run the project**
+```bash
+python main.py
+```
+
+---
+
+## â­ Quick Links
+
+â­ [Star this repo](https://github.com/Abdul-Insighht/All-the-Intermediate-Colleges-in-Pakistan-EDA) â€¢ ðŸ› [Report Bug](https://github.com/Abdul-Insighht/All-the-Intermediate-Colleges-in-Pakistan-EDA/issues) â€¢ ðŸ’¡ [Request Feature](https://github.com/Abdul-Insighht/All-the-Intermediate-Colleges-in-Pakistan-EDA/issues)
+
+---
+
+Made with â¤ï¸ using Python & AI Technologies â€” Demonstration by **Abdul-Insighht** - Data Science Specialist | AI Agent & Agentic AI Developer
+
+---
+
+## ðŸ‘¤ Author
+
+<table>
+<tr>
+<td>
+
+**Hafiz Abdul Rehman**  
+[Abdul-Insighht](https://github.com/Abdul-Insighht) Â· he/him  
+**Data Science Specialist | AI Agent & Agentic AI Developer**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Abdul--Insighht-181717?style=flat-square&logo=github)](https://github.com/Abdul-Insighht)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/hafiz-abdul-rehman-9990ab329/)
+
+</td>
+</tr>
+</table>
+
+---
+
+## ðŸ“„ License
+
+This project is licensed under the **MIT License**.
+
+---
+
+<div align="center">
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer"/>
+</div>
+
+<div align="center">
+  <sub>â­ï¸ From <a href="https://github.com/Abdul-Insighht">Abdul-Insighht</a> â€” Passionate about AI, ML, and solving real-world problems</sub>
+</div>
